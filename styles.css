@@ -156,22 +156,3 @@ footer {
 
 @media (max-width: 768px) {
   header h1 {
-    font-size: 2.3rem;
-  }
-
-  section {
-    padding: 24px;
-  }
-
-  h2 {
-    font-size: 1.7rem;
-  }
-
-  main {
-    padding: 35px 16px;
-  }
-
-  .back-button {
-    margin: 20px 16px 0;
-  }
-}
