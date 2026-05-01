@@ -32,6 +32,7 @@ header h1 {
   letter-spacing: 0.5px;
 }
 
+nav,
 nav ul {
   list-style: none;
   padding: 0;
@@ -71,19 +72,27 @@ section {
   box-shadow: 0 10px 30px rgba(120, 90, 105, 0.07);
 }
 
-h2 {
-  margin-top: 0;
-  margin-bottom: 14px;
+h1,
+h2,
+h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  font-weight: 600;
   color: #7b5565;
 }
 
+.content-page h1 {
+  font-size: 2.4rem;
+  margin-top: 0;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 h3 {
-  font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
-  color: #7b5565;
   margin-bottom: 10px;
 }
 
@@ -119,8 +128,8 @@ a:hover {
 
 .trend-section {
   display: grid;
-  grid-template-columns: 1.45fr 0.65fr;
-  gap: 36px;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 34px;
   align-items: start;
   margin-bottom: 40px;
 }
@@ -130,19 +139,39 @@ a:hover {
 }
 
 .trend-images {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  justify-content: flex-start;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.trend-images figure {
+  margin: 0;
+  text-align: center;
 }
 
 .trend-images img {
-  width: auto;
-  max-width: 155px;
-  height: auto;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 8px 22px rgba(90, 65, 76, 0.12);
+}
+
+.trend-images figcaption {
+  margin-top: 7px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: #7a5f6a;
+}
+
+/* makes sections with 3 images look balanced */
+.trend-images figure:nth-child(3):last-child {
+  grid-column: span 2;
+}
+
+.trend-images figure:nth-child(3):last-child img {
+  height: 210px;
 }
 
 /* ===== BRANDS ===== */
@@ -187,13 +216,7 @@ footer {
 
 /* ===== PAGES ===== */
 
-.conclusion-page {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  line-height: 1.8;
-}
-
+.conclusion-page,
 .sources-page {
   max-width: 900px;
   margin: 40px auto;
@@ -237,10 +260,15 @@ footer {
   }
 
   .trend-images {
-    align-items: center;
+    grid-template-columns: 1fr;
   }
 
-  .trend-images img {
-    max-width: 180px;
+  .trend-images figure:nth-child(3):last-child {
+    grid-column: span 1;
+  }
+
+  .trend-images img,
+  .trend-images figure:nth-child(3):last-child img {
+    height: 230px;
   }
 }
